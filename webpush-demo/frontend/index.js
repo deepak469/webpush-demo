@@ -1,3 +1,4 @@
+var regis=null;
 const check = () => {
   if (!("serviceWorker" in navigator)) {
     throw new Error("No Service Worker support!");
@@ -9,6 +10,7 @@ const check = () => {
 
 const registerServiceWorker = async () => {
   const swRegistration = await navigator.serviceWorker.register("service.js");
+  regis = swRegistration;
   return swRegistration;
 };
 
@@ -29,3 +31,23 @@ const main = async () => {
   const swRegistration = await registerServiceWorker();
 };
 // main(); we will not call main in the beginning.
+
+const unsubscribe = async () =>{
+  regis.pushManager.getSubscription()
+  .then(function(subscription) {
+    if (subscription) {
+      return subscription.unsubscribe();
+    }
+  })
+  .catch(function(error) {
+    console.log('Error unsubscribing', error);
+  })
+  .then(function() {
+    //updateSubscriptionOnServer(null);
+
+    console.log('User is unsubscribed.');
+    //isSubscribed = false;
+
+    //updateBtn();
+  });
+}
