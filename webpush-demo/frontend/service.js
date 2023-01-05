@@ -27,9 +27,10 @@ const saveSubscription = async subscription => {
 
 self.addEventListener("activate", async () => {
   // This will be called only once when the service worker is installed for first time.
+  // BJ5IxJBWdeqFDJTvrZ4wNRu7UY2XigDXjgiUBYEYVXDudxhEs0ReOJRBcBHsPYgZ5dyV8VjyqzbQKS8V7bUAglk
   try {
     const applicationServerKey = urlB64ToUint8Array(
-      "BJ5IxJBWdeqFDJTvrZ4wNRu7UY2XigDXjgiUBYEYVXDudxhEs0ReOJRBcBHsPYgZ5dyV8VjyqzbQKS8V7bUAglk"
+      "BMeX4GJx-o2WgCCvYK_XpV0l-dUmW8bGN04sYUGlOWG7FBZbzLPoiVTF40u3ZOkWPoUF-ai-NfbEsPugKHFxzcI="
     );
     const options = { applicationServerKey, userVisibleOnly: true };
     const subscription = await self.registration.pushManager.subscribe(options);
