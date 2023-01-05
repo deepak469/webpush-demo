@@ -44,7 +44,6 @@ self.addEventListener("activate", async () => {
 self.addEventListener("push", function(event) {
   if (event.data) {
     console.log("Push event!! ", event.data.text());
-    debugger
     showLocalNotification('Yolo', event.data.text(), self.registration, event)
   } else {
     console.log("Push event but no data");
