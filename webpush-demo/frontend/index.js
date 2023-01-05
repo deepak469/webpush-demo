@@ -10,7 +10,7 @@ const check = () => {
 
 const registerServiceWorker = async () => {
   const swRegistration = await navigator.serviceWorker.register("service.js");
-  regis = swRegistration;
+  this.regis = swRegistration;
   return swRegistration;
 };
 
@@ -33,7 +33,7 @@ const main = async () => {
 // main(); we will not call main in the beginning.
 
 const unsubscribe = async () =>{
-  regis.pushManager.getSubscription()
+  this.regis.pushManager.getSubscription()
   .then(function(subscription) {
     if (subscription) {
       return subscription.unsubscribe();
