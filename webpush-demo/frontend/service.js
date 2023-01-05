@@ -58,3 +58,14 @@ const showLocalNotification = (title, body, swRegistration, event) => {
   }
   event.waitUntil(swRegistration.showNotification(title, options));
 }
+
+self.addEventListener('notificationclick', function(event) {
+  if(event.data){
+    console.log('push event '+event.data.text());
+  }
+  event.notification.close();
+
+  event.waitUntil(
+    clients.openWindow('https://google.com')
+  );
+})
