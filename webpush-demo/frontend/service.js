@@ -1,5 +1,5 @@
 // urlB64ToUint8Array is a magic function that will encode the base64 public key
-// to Array buffer which is needed by the subscription option
+// to Array buffer which is needed by the subscription option 
 const urlB64ToUint8Array = base64String => {
   const padding = "=".repeat((4 - (base64String.length % 4)) % 4);
   const base64 = (base64String + padding)
