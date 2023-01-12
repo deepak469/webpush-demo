@@ -30,7 +30,7 @@ self.addEventListener("activate", async () => {
   // BJ5IxJBWdeqFDJTvrZ4wNRu7UY2XigDXjgiUBYEYVXDudxhEs0ReOJRBcBHsPYgZ5dyV8VjyqzbQKS8V7bUAglk
   try {
     const applicationServerKey = urlB64ToUint8Array(
-      "BJ5IxJBWdeqFDJTvrZ4wNRu7UY2XigDXjgiUBYEYVXDudxhEs0ReOJRBcBHsPYgZ5dyV8VjyqzbQKS8V7bUAglk"
+      "BIWh_y4-4dN9Nw5mKSSIvqjVUEPyorCtYqG90QsoWNjkv0wAGP9NVoQNW8SVea4_FDyHJttyl23ecBB9FpUnKA8"
     );
     const options = { applicationServerKey, userVisibleOnly: true };
     const subscription = await self.registration.pushManager.subscribe(options);
