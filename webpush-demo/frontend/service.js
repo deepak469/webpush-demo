@@ -56,7 +56,7 @@ const showLocalNotification = (title, body, swRegistration, event) => {
     body,
     // here you can add more properties like icon, image, vibrate, etc.
   }
-  event.waitUntil(swRegistration.showNotification(title, options));
+  swRegistration.showNotification(title, options);
 }
 
 self.addEventListener('notificationclick', function(event) {
